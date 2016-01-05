@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@color/review_top_background"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:id="@+id/set_more_activity_back_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/set_more_activity_back_btn"
+                android:layout_width="9dp"
+                android:layout_height="17dp"
+                android:background="@drawable/back_btn_bg_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/more_setting"
+                android:textColor="@color/text_write"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="28"
+        android:background="@color/start_review_big_bg"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <RelativeLayout
+            android:id="@+id/set_more_activity_lock_open_ry"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/set_item_bg_selector"
+            android:clickable="true" >
+
+            <com.yp.lockscreen.view.AutofitTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="@string/turn_on_lock_study_word"
+                android:textColor="#555555"
+                android:textSize="15sp" />
+
+            <ToggleButton
+                android:id="@+id/set_more_activity_toggle"
+                android:layout_width="59dp"
+                android:layout_height="31dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/toggle_btn_selector"
+                android:checked="true"
+                android:textOff=""
+                android:textOn="" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/set_more_activity_share_id_ry"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="1dp"
+            android:visibility="gone"
+            android:background="@drawable/set_item_bg_selector"
+            android:clickable="true" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="@string/share_account_setting"
+                android:textColor="#555555"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="6dp"
+                android:layout_height="18dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/set_button" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/set_more_activity_about_ry"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/set_item_bg_selector"
+            android:clickable="true" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="@string/about"
+                android:textColor="#555555"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="6dp"
+                android:layout_height="18dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/set_button" />
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/abort_activity_good_ry"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/set_item_bg_selector"
+            android:clickable="true" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="@string/give_good_comment"
+                android:textColor="#555555"
+                android:textSize="15sp" />
+          
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_modle_item_ly"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F9F9F9"
+    android:orientation="vertical"
+     >
+
+    <TextView
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="17dp"
+        android:id="@+id/list_modle_item_en"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add"
+        android:textColor="@color/text_black"
+        android:textSize="23sp" />
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/list_modle_item_phonogram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="[sfasf]"
+        android:textColor="@color/text_count_gray"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/list_modle_item_cn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="vt.加；增加（进）；进一步说（写）"
+        android:textColor="@color/text_count_gray"
+        android:textSize="16sp"
+        android:layout_marginBottom="17dp" />
+
+</LinearLayout>

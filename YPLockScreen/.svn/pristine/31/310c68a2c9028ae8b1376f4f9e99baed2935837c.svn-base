@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@color/review_top_background"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:id="@+id/word_book_activity_back_Ly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/word_book_back_btn"
+                android:layout_width="9dp"
+                android:layout_height="17dp"
+                android:background="@drawable/back_btn_bg_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/unknow_word_book"
+                android:textColor="@color/text_write"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/word_book_model_choose_btn"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@null"
+            android:drawableRight="@drawable/word_book_modle_choose_btn_selector"
+            android:gravity="center_horizontal" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="28"
+        android:background="@color/start_review_big_bg"
+        android:orientation="vertical"
+        android:padding="15dp" >
+        
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textSize="18sp"
+            android:textColor="#999999"
+            android:text="@string/unknow_word_book_no_word_prompt"/>
+
+        <LinearLayout
+            android:id="@+id/word_book_word_ly"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:background="#fff9f9f9" >
+
+                <com.yp.lockscreen.view.AutofitTextView
+                    android:id="@+id/word_book_word_en"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="a"
+                    android:textColor="@color/text_count_gray"
+                    android:textSize="30sp" />
+
+                <Button
+                    android:id="@+id/word_book_pronunce_btn"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignBaseline="@id/word_book_word_en"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/word_book_word_en"
+                    android:background="@drawable/word_details_pronunce_selector" />
+
+                <Button
+                    android:id="@+id/word_book_add_btn"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignBaseline="@id/word_book_word_en"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/add_norma" />
+
+                <com.yp.lockscreen.view.AutofitTextView
+                    android:id="@+id/word_book_word_soundmark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/word_book_word_en"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="[agasdngasn]"
+                    android:textColor="#929292"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffe0e0e0" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20" >
+
+                <LinearLayout
+                    android:id="@+id/word_book_show_details_ly"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/text_write"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/word_book_word_translate_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="asdfasdfasdfasd"
+                        android:textColor="@color/text_black"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/word_book_word_eg_en_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textColor="#ff646464"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/word_book_word_eg_cn_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="1"
+                            android:textColor="#ff646464"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/word_book_hide_details_ly"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/text_write"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:orientation="vertical"
+                     >
+
+                    <ImageView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/show_mean"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#D6DAE9"
+                        android:textSize="20sp"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/click_show_translation"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffe0e0e0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:background="@color/text_write"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="@string/word_review_progress_text"
+                    android:textColor="#ff666666"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp" >
+
+                    <ProgressBar
+                        android:id="@+id/word_book_review_bar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:indeterminate="false"
+                        android:indeterminateOnly="false"
+                        android:progressDrawable="@drawable/progress_drawable" />
+
+                    <TextView
+                        android:id="@+id/word_book_review_progress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="2"
+                        android:text="1/2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:gravity="bottom"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/word_book_forget_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_bg_gray_pressed"
+                    android:text="@string/last_word"
+                    android:textColor="@color/text_write"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/word_book_remember_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_bg_yellow_selector"
+                    android:text="@string/next_word"
+                    android:textColor="@color/text_write"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/word_book_list_ly"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ListView
+                android:id="@+id/word_book_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

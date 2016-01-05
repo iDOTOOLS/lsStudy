@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="vertical"
+     >
+
+    <View
+        android:id="@+id/ciku_list_item_view_line"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/start_review_big_bg"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/ciku_list_item_ly"
+        
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/set_item_bg_selector" >
+
+        <TextView
+            android:id="@+id/ciku_list_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/word_repository"
+            android:textColor="#555555"
+            android:textSize="16sp" />
+
+ <!--        <TextView
+            android:id="@+id/ciku_list_item_word_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ciku_list_item_name"
+            android:layout_marginLeft="20dp"
+            android:textColor="#9f9f9f"
+            android:textSize="10sp" /> -->
+
+        <ImageView
+            android:id="@+id/ciku_list_item_state_img"
+            android:layout_width="25dp"
+            android:layout_height="17dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/download"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/ciku_list_item_state_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:text="@string/not_downloaded"
+            android:textColor="#a09f9f"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+</LinearLayout>

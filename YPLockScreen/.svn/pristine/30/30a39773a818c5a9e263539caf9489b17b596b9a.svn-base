@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:background="#F9F9F9"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/dialog_audio_download_title_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/download_voice_data"
+        android:textColor="#0A8BE4"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/dialog_audio_download_top_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/dialog_audio_download_title_text"
+        android:background="#e0e0e0" />
+
+    <TextView
+        android:id="@+id/dialog_audio_download_content_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_audio_download_top_line"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/is_download_new_horizon_first_word_repository"
+        android:textColor="#555555"
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/dialog_audio_download_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/dialog_audio_download_content_text"
+        android:background="#e0e0e0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/dialog_audio_download_bottom_line"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/dialog_audio_download_canncel_btn"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/btn_bg_gary_selector"
+            android:text="@string/cancel"
+            android:textColor="@color/text_write"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/dialog_audio_download_ok_btn"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/btn_bg_yellow_selector"
+            android:text="@string/affirm"
+            android:textColor="@color/text_write"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

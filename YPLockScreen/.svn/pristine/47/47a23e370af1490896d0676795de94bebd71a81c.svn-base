@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@color/review_top_background"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:id="@+id/back_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/set_more_activity_back_btn"
+                android:layout_width="9dp"
+                android:layout_height="17dp"
+                android:background="@drawable/back_btn_bg_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/proper_running_description"
+                android:textColor="@color/text_write"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="28" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/start_review_big_bg"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/prompt_setting_for_proper_running"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/miui5_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/xiaomi_user_v5"
+                android:textColor="#1D93DD" />
+
+            <ImageView
+                android:layout_width="240dp"
+                android:layout_height="400dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/minu5_runreadme" />
+            
+            
+            <TextView
+                android:id="@+id/miui5_txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/xiaomi_user_v5"
+                android:textColor="#1D93DD" />            
+            <ImageView
+                android:layout_width="240dp"
+                android:layout_height="400dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/minu5_readme2" />            
+
+            <TextView
+                android:id="@+id/miui6_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/xiaomi_user_v6"
+                android:textColor="#1D93DD" />
+
+            <ImageView
+                android:layout_width="240dp"
+                android:layout_height="400dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/minu6_runreadme" />
+            
+            <TextView
+                android:id="@+id/miui6_txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/xiaomi_user_v6"
+                android:textColor="#1D93DD" />
+
+            <ImageView
+                android:layout_width="240dp"
+                android:layout_height="400dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/minu6_readme2" />            
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

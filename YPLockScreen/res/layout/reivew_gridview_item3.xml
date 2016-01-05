@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffefefef"
+    android:gravity="center" 
+    android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/gridview_item3_left_ly"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/gridview_item3_img"
+                android:layout_width="20dp"
+                android:layout_height="26dp"
+                android:src="@drawable/cet_4_icon" />
+
+            <TextView
+                android:id="@+id/gridview_item3_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/indicator_pressed"
+                android:text="@string/review_module_cet_text" />
+        </LinearLayout>
+        
+		<RelativeLayout
+		    android:layout_width="0dp"
+		    android:layout_weight="6"
+		    android:layout_height="wrap_content"
+		    >
+		    <com.yp.lockscreen.view.AutofitTextView
+		        android:id="@+id/gridview_item3_count_text"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_centerVertical="true"
+		        android:maxWidth="50dp"
+		        android:textSize="40sp"
+		        android:singleLine="true"
+		        android:text="1321321313"
+		        android:textColor="@color/text_count_gray"
+		        />
+		    <TextView
+		        android:id="@+id/item_count_unit_text"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="3dp"
+		        android:layout_toRightOf="@id/gridview_item3_count_text"
+		        android:layout_alignBaseline="@id/gridview_item3_count_text"
+		        android:text="@string/review_text_wrodcount"
+		        android:textColor="@color/indicator_pressed"
+		        android:textSize="12sp"
+		        />
+		    
+		</RelativeLayout>
+
+</LinearLayout>
