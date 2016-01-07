@@ -133,14 +133,21 @@ public class GlobalConfigMgr {
         SharedPreferencesCompat.apply(prefs.edit().putInt("wall_flag", flag));
     }
     
+    private static Boolean vOpenLockscreen = null;
     public static boolean getOpenLockScreenFlag(Context cxt){
-    	SharedPreferences prefs = cxt.getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
-    	return prefs.getBoolean("is_open_lock_flag", true);
+        if(vOpenLockscreen == null) {
+        	SharedPreferences prefs = cxt.getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
+        	vOpenLockscreen = prefs.getBoolean("is_open_lock_flag", true);
+        }
+        return vOpenLockscreen;
     }
     
     public static void setOpenLockScreenFlag(Context cxt,boolean flag){
-    	SharedPreferences prefs = cxt.getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
-    	SharedPreferencesCompat.apply(prefs.edit().putBoolean("is_open_lock_flag", flag));
+        if(vOpenLockscreen != null || vOpenLockscreen.booleanValue() != flag) {
+            vOpenLockscreen = flag;
+        	SharedPreferences prefs = cxt.getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
+        	SharedPreferencesCompat.apply(prefs.edit().putBoolean("is_open_lock_flag", flag));
+        }
     }
     
     public static boolean getIsOpenRemind(Context cxt){
