@@ -90,6 +90,9 @@
             </intent-filter>
         </activity>
 
+        <service android:name="com.imdoon.daemonguard.DaemonService" 
+            android:process=":dae">
+        </service>
         <service android:name="com.yp.lockscreen.StaticService" >
             <intent-filter android:priority="2147483647">
                 <action android:name="dianxinos.intent.action.LOCKSCREEN_START" />
