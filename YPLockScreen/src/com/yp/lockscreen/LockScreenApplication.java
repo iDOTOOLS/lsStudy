@@ -5,6 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Environment;
 import com.dianxinos.lockscreen_sdk.DXLockScreenUtils;
+import com.dotools.utils.Utilities;
 import com.ixintui.pushsdk.PushSdkApi;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -24,6 +25,7 @@ public class LockScreenApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Utilities.initEnvironment(this);
         DXLockScreenUtils.DBG = true;
         preLoadInfo();
         getScreenSize();

@@ -25,4 +25,18 @@
        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>  
        <item name="android:progressDrawable">@drawable/progressbar_mini</item>  
    </style>  
+   
+     <style name="Theme.FullScreenNoTitleBar" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+         <item name="android:windowBackground">@android:color/transparent</item><!-- 背景透明 -->
+         <item name="android:windowIsTranslucent">true</item><!-- 半透明 -->
+         <item name="android:colorBackgroundCacheHint">@null</item> 
+         <item name="android:windowAnimationStyle">@null</item>  
+    </style>
+    <style name="Theme.FullScreenNoDisplay" parent="@android:style/Theme.NoDisplay">
+        <item name="android:windowIsTranslucent">true</item><!-- 半透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item><!-- 背景透明 -->
+         <item name="android:colorBackgroundCacheHint">@null</item> 
+         <item name="android:windowAnimationStyle">@null</item>  
+    </style>
+    
 </resources>
