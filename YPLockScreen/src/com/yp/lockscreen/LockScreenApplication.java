@@ -7,6 +7,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Environment;
 import com.dianxinos.lockscreen_sdk.DXLockScreenUtils;
+import com.dotools.utils.Utilities;
 import com.imdoon.daemonguard.DaemonService;
 import com.ixintui.pushsdk.PushSdkApi;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
@@ -39,9 +40,9 @@ public class LockScreenApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        
         String myProcessName = getProcessName();
         if (myProcessName.equals("com.yp.lockscreen")) {
+            Utilities.initEnvironment(this);
             DXLockScreenUtils.DBG = true;
             preLoadInfo();
             getScreenSize();

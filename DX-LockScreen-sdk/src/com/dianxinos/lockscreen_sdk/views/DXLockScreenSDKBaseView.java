@@ -59,11 +59,11 @@ public abstract class DXLockScreenSDKBaseView extends FrameLayout{
     public abstract void updateBatteryStatus(boolean isDevicePluggedIn, int batteryLevel);
 
     public void onResume() {
-        mIsPaused = false;
+      //  mIsPaused = false;
     }
 
     public void onPause() {
-        mIsPaused = true;
+        //mIsPaused = true;
     }
 
     public void destroy() {
