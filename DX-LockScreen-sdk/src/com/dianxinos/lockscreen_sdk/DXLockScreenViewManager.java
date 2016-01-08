@@ -3,24 +3,26 @@ package com.dianxinos.lockscreen_sdk;
 //import com.android.internal.telephony.IccCard;
 //import com.android.internal.telephony.TelephonyIntents;
 //import android.provider.Telephony.Intents;
-import com.dianxinos.lockscreen_sdk.monitor.DXLockScreenMonitor;
-import com.dianxinos.lockscreen_sdk.monitor.DXPhoneStateListener;
-import com.dianxinos.lockscreen_sdk.views.DXLockScreenSDKBaseView;
-
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
+import android.graphics.PixelFormat;
 import android.os.BatteryManager;
 import android.os.Build;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.View;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
+
+import com.dianxinos.lockscreen_sdk.monitor.DXLockScreenMonitor;
+import com.dianxinos.lockscreen_sdk.monitor.DXPhoneStateListener;
+import com.dianxinos.lockscreen_sdk.views.DXLockScreenSDKBaseView;
+import com.dotools.utils.DevicesUtils;
+import com.dotools.utils.FullScreenHelperActivity;
+import com.dotools.utils.FullScreenHelperNoDisplayActivity;
+
+import java.util.ArrayList;
 
 /**
  * 管理LockScreenView的一个抽象类，必须继承并且实现相应接口。
@@ -231,6 +233,16 @@ public abstract class DXLockScreenViewManager {
             if (isLockScreenLocked())
                 return;
             createDXLockScreenView();
+            
+//            if (Build.VERSION.SDK_INT >= 19 && DevicesUtils_vk.hasVertualKey()) {// |
+//                // View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//                // 有导航条并且版本在19以上
+//                mDXLockScreenView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN
+//                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LOW_PROFILE);
+//            } else if (Build.VERSION.SDK_INT >= 14) {
+//                mDXLockScreenView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+//            }
+            
             WindowManager.LayoutParams params = new WindowManager.LayoutParams();
             if (DXLockScreenUtils.isICSSDKVersion()) {
                 Log.d(TAG, "Current platform is ics");
@@ -239,27 +251,41 @@ public abstract class DXLockScreenViewManager {
             } else {
                 params.type = WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY;
             }
-
-            params.format = android.graphics.PixelFormat.TRANSLUCENT;
-            params.width = WindowManager.LayoutParams.FILL_PARENT;
-            params.height = WindowManager.LayoutParams.FILL_PARENT;
             params.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
-            params.softInputMode = WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN;    
+            params.flags |= LayoutParams.FLAG_DISMISS_KEYGUARD;
+//            params.flags |= LayoutParams.FLAG_FULLSCREEN;
+//            params.flags |= LayoutParams.FLAG_LAYOUT_IN_SCREEN;
+//            params.flags |= LayoutParams.FLAG_LAYOUT_NO_LIMITS;
+            params.flags |= LayoutParams.FLAG_SHOW_WHEN_LOCKED;
+            params.format = PixelFormat.RGBA_8888;
+            params.softInputMode = WindowManager.LayoutParams.SOFT_INPUT_MASK_ADJUST;
+            params.gravity = Gravity.TOP | Gravity.START;
+//            if (VERSION.SDK_INT >= 19) {
+//                params.flags |= WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION;
+//                params.flags |= WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+//            }
+//            if (DevicesUtils_vk.hasVertualKey()) {
+//                params.height = UiUtils.getScreenHeightPixelsTotal();
+//            } else {
+             params.height = WindowManager.LayoutParams.MATCH_PARENT;
+            //}
+            params.width = WindowManager.LayoutParams.MATCH_PARENT;
             params.x = 0;
             params.y = 0;
-            params.gravity = Gravity.TOP | Gravity.LEFT;
-            params.alpha = 1.0f;
-//            if(Build.VERSION.SDK_INT>=14){
-//                mDXLockScreenView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);         //可全屏显示view 但在2.3手机上 无法下拉通知栏
-//            }
+            params.flags |= LayoutParams.FLAG_HARDWARE_ACCELERATED;
+            if (DevicesUtils.isLenovoDevice()) {
+                FullScreenHelperNoDisplayActivity.doStartActivity(mContext);
+            } else {
+                FullScreenHelperActivity.doStartActivity(mContext);
+            }
             hanldeLiveWallpaper(params);
-
+//            mDXLockScreenView.setLayoutParams(params);
             if (mDXLockScreenView != null && !isLockScreenLocked()) {
                 mWindowManager.addView(mDXLockScreenView, params);
             }
-            params.type = WindowManager.LayoutParams.TYPE_KEYGUARD;
-            mDXLockScreenView.setLayoutParams(params);
-            mWindowManager.updateViewLayout(mDXLockScreenView, params);
+//            params.type = WindowManager.LayoutParams.TYPE_KEYGUARD;
+//            mDXLockScreenView.setLayoutParams(params);
+//            mWindowManager.updateViewLayout(mDXLockScreenView, params);
 
             if (DXLockScreenUtils.isScreenOn(mContext)) {
                 if (DXLockScreenUtils.DBG) {
@@ -343,6 +369,11 @@ public abstract class DXLockScreenViewManager {
             Log.e(TAG, "removed LockScreenView throw exception");
         } finally {
             try {
+                if (DevicesUtils.isLenovoDevice()) {
+                    FullScreenHelperNoDisplayActivity.doFinishActivity();
+                } else {
+                    FullScreenHelperActivity.doFinishActivity();
+                }
                 mWindowManager.removeView(mDXLockScreenView);
                 mDXLockScreenView.destroy();
                 DXLockScreenUtils.destroyView(mDXLockScreenView);

@@ -872,6 +872,8 @@ int string xiaomi_user_v6 0x7f06008a
 int style AppBaseTheme 0x7f070000
 int style AppTheme 0x7f070001
 int style ProgressBar_Mini 0x7f070002
+int style Theme_FullScreenNoDisplay 0x7f070004
+int style Theme_FullScreenNoTitleBar 0x7f070003
 int[] styleable NumberProgressBar { 0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009 }
 int styleable NumberProgressBar_max 1
 int styleable NumberProgressBar_progress 0

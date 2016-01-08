@@ -3,19 +3,25 @@
 # view res/layout/lock_screen_main.xml #generated:101
 -keep class android.support.v4.view.ViewPager { <init>(...); }
 
+# view AndroidManifest.xml #generated:199
+-keep class com.dotools.utils.FullScreenHelperActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:205
+-keep class com.dotools.utils.FullScreenHelperNoDisplayActivity { <init>(...); }
+
 # view AndroidManifest.xml #generated:83
 -keep class com.imdoon.daemonguard.DaemonService { <init>(...); }
 
-# view AndroidManifest.xml #generated:215
+# view AndroidManifest.xml #generated:227
 -keep class com.umeng.fb.ContactActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:212
+# view AndroidManifest.xml #generated:224
 -keep class com.umeng.fb.ConversationActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:202
+# view AndroidManifest.xml #generated:214
 -keep class com.yp.lockscreen.BootBroadCast { <init>(...); }
 
-# view AndroidManifest.xml #generated:200
+# view AndroidManifest.xml #generated:212
 -keep class com.yp.lockscreen.DownloadVoice { <init>(...); }
 
 # view AndroidManifest.xml #generated:65

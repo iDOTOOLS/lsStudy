@@ -196,6 +196,18 @@
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" >
         </activity>
+         <activity
+            android:name="com.dotools.utils.FullScreenHelperActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.dotools"
+            android:theme="@style/Theme.FullScreenNoTitleBar" />
+        <activity
+            android:name="com.dotools.utils.FullScreenHelperNoDisplayActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.dotools"
+            android:theme="@style/Theme.FullScreenNoDisplay" />
 
         <service android:name="com.yp.lockscreen.DownloadVoice" />
 

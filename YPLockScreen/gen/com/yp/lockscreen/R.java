@@ -1058,6 +1058,8 @@ containing a value of this type.
          */
         public static final int AppTheme=0x7f070001;
         public static final int ProgressBar_Mini=0x7f070002;
+        public static final int Theme_FullScreenNoDisplay=0x7f070004;
+        public static final int Theme_FullScreenNoTitleBar=0x7f070003;
     }
     public static final class styleable {
         /** Attributes that can be used with a NumberProgressBar.
