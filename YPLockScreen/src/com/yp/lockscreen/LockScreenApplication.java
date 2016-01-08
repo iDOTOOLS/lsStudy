@@ -1,11 +1,14 @@
 package com.yp.lockscreen;
 
 import java.io.File;
+
+import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.os.Environment;
 import com.dianxinos.lockscreen_sdk.DXLockScreenUtils;
 import com.dotools.utils.Utilities;
+import com.imdoon.daemonguard.DaemonService;
 import com.ixintui.pushsdk.PushSdkApi;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -22,19 +25,37 @@ import com.yp.lockscreen.utils.LogHelper;
 
 public class LockScreenApplication extends Application {
 
+    private String getProcessName() {
+        final int pid = android.os.Process.myPid();
+        ActivityManager mActivityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningAppProcessInfo appProcess : mActivityManager
+                .getRunningAppProcesses()) {
+            if (appProcess.pid == pid) {
+                return appProcess.processName;
+            }
+        }
+        return null;
+    }
+ 
     @Override
     public void onCreate() {
         super.onCreate();
-        Utilities.initEnvironment(this);
-        DXLockScreenUtils.DBG = true;
-        preLoadInfo();
-        getScreenSize();
-        initBaseDir();
-        initImageLoader(Global.gContext);
-        Global.language = DeviceUtil.getLocalLanguage();
-        
-        ixinPushReg();
-        wakeUpLockService();
+        String myProcessName = getProcessName();
+        if (myProcessName.equals("com.yp.lockscreen")) {
+            Utilities.initEnvironment(this);
+            DXLockScreenUtils.DBG = true;
+            preLoadInfo();
+            getScreenSize();
+            initBaseDir();
+            initImageLoader(Global.gContext);
+            Global.language = DeviceUtil.getLocalLanguage();
+            
+            ixinPushReg();
+            wakeUpLockService();
+        }
+        if (!myProcessName.equals("com.yp.lockscreen:dae")) {
+            DaemonService.startGuard(getApplicationContext());
+        }
     }
     
     public void ixinPushReg(){
