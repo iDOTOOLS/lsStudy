@@ -10,24 +10,17 @@ import android.content.pm.ActivityInfo;
 import android.graphics.PixelFormat;
 import android.os.BatteryManager;
 import android.os.Build;
-import android.os.Build.VERSION;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.View;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
-import android.widget.Toast;
 
 import com.dianxinos.lockscreen_sdk.monitor.DXLockScreenMonitor;
 import com.dianxinos.lockscreen_sdk.monitor.DXPhoneStateListener;
 import com.dianxinos.lockscreen_sdk.views.DXLockScreenSDKBaseView;
-import com.dotools.utils.DTLockScreenUtils;
 import com.dotools.utils.DevicesUtils;
-import com.dotools.utils.DevicesUtils_vk;
 import com.dotools.utils.FullScreenHelperActivity;
 import com.dotools.utils.FullScreenHelperNoDisplayActivity;
-import com.dotools.utils.UiUtils;
-import com.dotools.utils.Utilities;
 
 import java.util.ArrayList;
 
