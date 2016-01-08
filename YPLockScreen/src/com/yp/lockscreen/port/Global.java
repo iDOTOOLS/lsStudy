@@ -15,9 +15,6 @@ public class Global {
 	public static int screen_Height;
 	public static int screen_width;
 	
-    public static String baidupushChannelId;
-    public static String baidupushUserId;
-    public static String baidupushAppid;
 
 	public static int review_count = 10;
 	public static int review_orderType = 0;

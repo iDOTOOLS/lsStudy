@@ -18,14 +18,6 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
-    <!-- lock screen -->
-<!--    <uses-permission android:name="android.permission.READ_SMS" />
-		<uses-permission android:name="android.permission.WRITE_SMS" />
-		<uses-permission android:name="android.permission.WRITE_CONTACTS" />
-        <uses-permission android:name="android.permission.READ_CONTACTS" /> 
-		<uses-permission android:name="android.permission.CALL_PHONE" />
-    	<uses-permission android:name="android.permission.CALL_PRIVILEGED" /> -->
-
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -43,7 +35,6 @@
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
     <!-- end lock screen -->
 
-
     <!-- 爱心推权限 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.GET_TASKS" />
@@ -56,7 +47,6 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <!-- permission to avoid other apps to send update-available broadcast -->
     <permission
         android:name="com.dianxinos.lockscreen_threepoint.permission.UPDATE"
         android:protectionLevel="signature" />
@@ -253,58 +243,6 @@
         <!-- 友盟 end -->
         
         
-        <!-- 爱心推 key -->
-        <meta-data
-            android:name="aixintui"
-            android:value="1794761762" />
-
-        <receiver android:name="com.yp.lockscreen.push.IxinPushReceiver" >
-            <intent-filter>
-
-                <!-- 接收透传消息 -->
-                <action android:name="com.ixintui.action.MESSAGE" />
-                <!-- 接收register, add tag等反馈消息 -->
-                <action android:name="com.ixintui.action.RESULT" />
-                <!-- 接收notification click消息 -->
-                <action android:name="com.ixintui.action.notification.CLICK" />
-            </intent-filter>
-        </receiver>
-        <!-- 以下为push使用的活动，服务和接收器，请不要修改这些内容 -->
-        <activity
-            android:name="com.ixintui.push.PushActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-            <intent-filter>
-                <action android:name="com.ixintui.push.PushActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <service
-            android:name="com.ixintui.push.PushService"
-            android:exported="true"
-            android:process=":ixintui_service_v1" >
-        </service>
-        <service
-            android:name="com.ixintui.push.MediateService"
-            android:exported="true" >
-        </service>
-
-        <receiver android:name="com.ixintui.push.Receiver" >
-            <intent-filter>
-                <action android:name="com.ixintui.action.BROADCAST" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REMOVED" />
-
-                <data android:scheme="package" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            </intent-filter>
-        </receiver>
     </application>
 
 </manifest>

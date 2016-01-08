@@ -9,8 +9,6 @@ package com.yp.lockscreen;
 
 public final class Manifest {
     public static final class permission {
-        /**  permission to avoid other apps to send update-available broadcast 
-         */
         public static final String UPDATE="com.dianxinos.lockscreen_threepoint.permission.UPDATE";
     }
 }

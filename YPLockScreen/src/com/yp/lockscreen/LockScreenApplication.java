@@ -9,7 +9,6 @@ import android.os.Environment;
 import com.dianxinos.lockscreen_sdk.DXLockScreenUtils;
 import com.dotools.utils.Utilities;
 import com.imdoon.daemonguard.DaemonService;
-import com.ixintui.pushsdk.PushSdkApi;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -19,7 +18,6 @@ import com.yp.enstudy.Constans;
 import com.yp.enstudy.DownloadManager;
 import com.yp.enstudy.WordData;
 import com.yp.lockscreen.port.Global;
-import com.yp.lockscreen.push.IxinPushUtils;
 import com.yp.lockscreen.utils.DeviceUtil;
 import com.yp.lockscreen.utils.LogHelper;
 
@@ -50,7 +48,6 @@ public class LockScreenApplication extends Application {
             initImageLoader(Global.gContext);
             Global.language = DeviceUtil.getLocalLanguage();
             
-            ixinPushReg();
             wakeUpLockService();
         }
         if (!myProcessName.equals("com.yp.lockscreen:dae")) {
@@ -58,14 +55,6 @@ public class LockScreenApplication extends Application {
         }
     }
     
-    public void ixinPushReg(){
-		try {
-			System.out.println("exec ixinPushReg");
-			PushSdkApi.register(this, IxinPushUtils.getAixinTuiKey(this), IxinPushUtils.getChannel(this), IxinPushUtils.getVersionName(this));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    }
 
     public void wakeUpLockService() {
         if (!DeviceUtil.isServiceWorked(getApplicationContext(), "com.yp.lockscreen.StaticService")) {
