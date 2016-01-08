@@ -241,14 +241,14 @@ public abstract class DXLockScreenViewManager {
                 return;
             createDXLockScreenView();
             
-            if (Build.VERSION.SDK_INT >= 19 && DevicesUtils_vk.hasVertualKey()) {// |
-                // View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                // 有导航条并且版本在19以上
-                mDXLockScreenView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LOW_PROFILE);
-            } else if (Build.VERSION.SDK_INT >= 14) {
-                mDXLockScreenView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
-            }
+//            if (Build.VERSION.SDK_INT >= 19 && DevicesUtils_vk.hasVertualKey()) {// |
+//                // View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//                // 有导航条并且版本在19以上
+//                mDXLockScreenView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN
+//                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LOW_PROFILE);
+//            } else if (Build.VERSION.SDK_INT >= 14) {
+//                mDXLockScreenView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+//            }
             
             WindowManager.LayoutParams params = new WindowManager.LayoutParams();
             if (DXLockScreenUtils.isICSSDKVersion()) {
@@ -260,32 +260,31 @@ public abstract class DXLockScreenViewManager {
             }
             params.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
             params.flags |= LayoutParams.FLAG_DISMISS_KEYGUARD;
-            params.flags |= LayoutParams.FLAG_FULLSCREEN;
-            params.flags |= LayoutParams.FLAG_LAYOUT_IN_SCREEN;
-            params.flags |= LayoutParams.FLAG_LAYOUT_NO_LIMITS;
+//            params.flags |= LayoutParams.FLAG_FULLSCREEN;
+//            params.flags |= LayoutParams.FLAG_LAYOUT_IN_SCREEN;
+//            params.flags |= LayoutParams.FLAG_LAYOUT_NO_LIMITS;
             params.flags |= LayoutParams.FLAG_SHOW_WHEN_LOCKED;
             params.format = PixelFormat.RGBA_8888;
             params.softInputMode = WindowManager.LayoutParams.SOFT_INPUT_MASK_ADJUST;
             params.gravity = Gravity.TOP | Gravity.START;
-            if (VERSION.SDK_INT >= 19) {
-                params.flags |= WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION;
-                params.flags |= WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-            }
-            if (DevicesUtils_vk.hasVertualKey()) {
-                params.height = UiUtils.getScreenHeightPixelsTotal();
-            } else {
-                params.height = WindowManager.LayoutParams.MATCH_PARENT;
-            }
+//            if (VERSION.SDK_INT >= 19) {
+//                params.flags |= WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION;
+//                params.flags |= WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+//            }
+//            if (DevicesUtils_vk.hasVertualKey()) {
+//                params.height = UiUtils.getScreenHeightPixelsTotal();
+//            } else {
+             params.height = WindowManager.LayoutParams.MATCH_PARENT;
+            //}
             params.width = WindowManager.LayoutParams.MATCH_PARENT;
             params.x = 0;
             params.y = 0;
             params.flags |= LayoutParams.FLAG_HARDWARE_ACCELERATED;
             if (DevicesUtils.isLenovoDevice()) {
-                FullScreenHelperNoDisplayActivity.doLockScreen(mContext);
+                FullScreenHelperNoDisplayActivity.doStartActivity(mContext);
             } else {
-                FullScreenHelperActivity.doLockScreen(mContext);
+                FullScreenHelperActivity.doStartActivity(mContext);
             }
-            DTLockScreenUtils.addStatusBarAboveView(Utilities.getApplicationContext());
             hanldeLiveWallpaper(params);
 //            mDXLockScreenView.setLayoutParams(params);
             if (mDXLockScreenView != null && !isLockScreenLocked()) {
@@ -378,11 +377,10 @@ public abstract class DXLockScreenViewManager {
         } finally {
             try {
                 if (DevicesUtils.isLenovoDevice()) {
-                    FullScreenHelperNoDisplayActivity.doUnLockScreen(Utilities.getApplicationContext());
+                    FullScreenHelperNoDisplayActivity.doFinishActivity();
                 } else {
-                    FullScreenHelperActivity.doUnLockScreen(Utilities.getApplicationContext());
+                    FullScreenHelperActivity.doFinishActivity();
                 }
-                DTLockScreenUtils.removeStatusBarAboveView();
                 mWindowManager.removeView(mDXLockScreenView);
                 mDXLockScreenView.destroy();
                 DXLockScreenUtils.destroyView(mDXLockScreenView);

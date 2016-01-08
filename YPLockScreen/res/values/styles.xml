@@ -26,7 +26,7 @@
        <item name="android:progressDrawable">@drawable/progressbar_mini</item>  
    </style>  
    
-     <style name="Theme.FullScreenNoTitleBar" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+     <style name="Theme.FullScreenNoTitleBar" parent="@android:style/Theme.NoTitleBar">
          <item name="android:windowBackground">@android:color/transparent</item><!-- 背景透明 -->
          <item name="android:windowIsTranslucent">true</item><!-- 半透明 -->
          <item name="android:colorBackgroundCacheHint">@null</item> 
