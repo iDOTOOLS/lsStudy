@@ -1,0 +1,110 @@
+# view res/layout/activity_main.xml #generated:132
+# view res/layout/activity_welcome.xml #generated:7
+# view res/layout/lock_screen_main.xml #generated:101
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view AndroidManifest.xml #generated:83
+-keep class com.imdoon.daemonguard.DaemonService { <init>(...); }
+
+# view AndroidManifest.xml #generated:215
+-keep class com.umeng.fb.ContactActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:212
+-keep class com.umeng.fb.ConversationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:202
+-keep class com.yp.lockscreen.BootBroadCast { <init>(...); }
+
+# view AndroidManifest.xml #generated:200
+-keep class com.yp.lockscreen.DownloadVoice { <init>(...); }
+
+# view AndroidManifest.xml #generated:65
+-keep class com.yp.lockscreen.LockScreenApplication { <init>(...); }
+
+# view AndroidManifest.xml #generated:86
+-keep class com.yp.lockscreen.StaticService { <init>(...); }
+
+# view AndroidManifest.xml #generated:174
+-keep class com.yp.lockscreen.activity.AbortActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:114
+-keep class com.yp.lockscreen.activity.AlertService { <init>(...); }
+
+# view AndroidManifest.xml #generated:169
+-keep class com.yp.lockscreen.activity.CikuListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:164
+-keep class com.yp.lockscreen.activity.GraspActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:179
+-keep class com.yp.lockscreen.activity.InitSettingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:71
+-keep class com.yp.lockscreen.activity.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:129
+-keep class com.yp.lockscreen.activity.MoreSetActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:134
+-keep class com.yp.lockscreen.activity.RemindReviewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:119
+-keep class com.yp.lockscreen.activity.ReviewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:149
+-keep class com.yp.lockscreen.activity.RunReadMeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:139
+-keep class com.yp.lockscreen.activity.SetHomeActicity { <init>(...); }
+
+# view AndroidManifest.xml #generated:184
+-keep class com.yp.lockscreen.activity.SetShareIdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:144
+-keep class com.yp.lockscreen.activity.SetSupport { <init>(...); }
+
+# view AndroidManifest.xml #generated:154
+-keep class com.yp.lockscreen.activity.SetWallpaper { <init>(...); }
+
+# view AndroidManifest.xml #generated:124
+-keep class com.yp.lockscreen.activity.StudyPlaneActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:194
+-keep class com.yp.lockscreen.activity.WallpagerLibActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:189
+-keep class com.yp.lockscreen.activity.WelcomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:159
+-keep class com.yp.lockscreen.activity.WordBookActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:108
+-keep class com.yp.lockscreen.monitor.SwitchReceiver { <init>(...); }
+
+# view res/layout/lockscreen_vp_item.xml #generated:52
+# view res/layout/lockscreen_vp_item.xml #generated:76
+# view res/layout/reivew_gridview_item2.xml #generated:37
+# view res/layout/reivew_gridview_item3.xml #generated:37
+# view res/layout/review_fragment.xml #generated:56
+# view res/layout/review_gridview_item1.xml #generated:38
+# view res/layout/review_gridview_item4.xml #generated:37
+# view res/layout/set_more_activity.xml #generated:53
+# view res/layout/word_book_activity.xml #generated:105
+# view res/layout/word_book_activity.xml #generated:76
+# view res/layout/word_details.xml #generated:57
+# view res/layout/word_details.xml #generated:87
+-keep class com.yp.lockscreen.view.AutofitTextView { <init>(...); }
+
+# view res/layout/lock_screen_main.xml #generated:96
+-keep class com.yp.lockscreen.view.HorizontalScrollGestureLy { <init>(...); }
+
+# view res/layout/lockscreen_vp_item.xml #generated:7
+-keep class com.yp.lockscreen.view.PulltoRefresh { <init>(...); }
+
+# view res/layout/dialog_remind_wheel_view.xml #generated:30
+# view res/layout/dialog_remind_wheel_view.xml #generated:36
+-keep class com.yp.lockscreen.view.WheelView { <init>(...); }
+
+# view AndroidManifest.xml #generated:103
+-keep class com.yp.lockscreen.work.AlertReceiver { <init>(...); }
+
